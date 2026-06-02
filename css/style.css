@@ -557,42 +557,10 @@ main {
 
 /* ABOUT PAGE */
 
-.about-page {
-    width: min(1040px, calc(100% - 32px));
-    margin: 44px auto 96px;
-    text-align: left;
-}
-
-.about-hero {
-    width: min(820px, 100%);
-    margin: 0 auto 56px;
-    padding: 36px 28px;
-    text-align: center;
-    border: 1px solid rgba(91, 170, 35, 0.18);
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.68);
-    box-shadow: 0 12px 28px rgba(48, 92, 18, 0.08);
-    animation: fadeInUp 0.7s ease both;
-}
-
-.about-eyebrow {
-    margin-bottom: 14px;
-    color: rgb(91, 170, 35);
-    font-size: 15px;
-    font-weight: 800;
-    line-height: 1;
-}
-
-.about-hero p:not(.about-eyebrow) {
-    color: rgb(62, 73, 59);
-    font-size: 24px;
-    font-weight: 650;
-    line-height: 1.5;
-}
-
 .about-section {
     padding: 46px 0;
     border-top: 1px solid rgba(91, 170, 35, 0.16);
+    margin: 50px auto 92px;
 }
 
 .about-section h2,
@@ -752,7 +720,7 @@ main {
 .page-kicker {
     margin: 0 auto 12px;
     color: rgb(91, 170, 35);
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 800;
     line-height: 1;
 }
@@ -762,7 +730,7 @@ main {
     margin: 10px auto 18px;
     padding: 0;
     color: rgb(91, 170, 35);
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 800;
     line-height: 1;
     text-decoration: none;
@@ -782,18 +750,29 @@ main {
 }
 
 .page-intro {
-    width: min(560px, 100%);
+    width: min(720px, 100%);
     margin: 0 auto;
     padding: 18px 16px;
     border: 1px solid rgba(91, 170, 35, 0.22);
-    border-radius: 18px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.78);
+    box-shadow: 0 12px 30px rgba(48, 92, 18, 0.12);
+    backdrop-filter: blur(6px);
+}
+
+.page-intro--compact {
+    width: min(400px, 100%);
+    margin: 0 auto;
+    padding: 18px 16px;
+    border: 1px solid rgba(91, 170, 35, 0.22);
+    border-radius: 8px;
     background: rgba(255, 255, 255, 0.78);
     box-shadow: 0 12px 30px rgba(48, 92, 18, 0.12);
     backdrop-filter: blur(6px);
 }
 
 .page p {
-    font-size: clamp(20px, 2vw, 28px);
+    font-size: clamp(12px, 2vw, 20px);
     line-height: 1.6;
 }
 
@@ -811,6 +790,132 @@ main {
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
+}
+
+.topic-articles {
+    display: grid;
+    gap: 16px;
+    width: min(820px, calc(100% - 32px));
+    margin-bottom: 90px;
+}
+
+.article-preview {
+    padding: 26px 24px;
+    text-align: left;
+    border: 1px solid rgba(91, 170, 35, 0.18);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.72);
+    box-shadow: 0 12px 28px rgba(48, 92, 18, 0.08);
+}
+
+.article-preview h2 {
+    color: rgb(31, 45, 29);
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.article-preview p {
+    margin-top: 16px;
+    color: rgb(104, 116, 101);
+    font-size: 17px;
+    line-height: 1.65;
+}
+
+.article-preview a,
+.article-back {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    min-height: 40px;
+    margin-top: 20px;
+    padding: 0 16px;
+    text-decoration: none;
+    color: rgb(70, 137, 26);
+    font-size: 14px;
+    font-weight: 800;
+    border: 1px solid rgba(91, 170, 35, 0.32);
+    border-radius: 10px;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.article-preview a:hover,
+.article-back:hover {
+    color: white;
+    background: rgb(91, 170, 35);
+    transform: translateY(-1px);
+}
+
+.article-preview--empty {
+    opacity: 0.72;
+}
+
+.article-page {
+    width: min(820px, calc(100% - 32px));
+    margin: 36px auto 96px;
+    text-align: left;
+}
+
+.article-back {
+    margin-top: 0;
+    margin-bottom: 28px;
+}
+
+.article-header {
+    padding-bottom: 26px;
+    border-bottom: 1px solid rgba(91, 170, 35, 0.16);
+}
+
+.article-header h1 {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    color: rgb(31, 45, 29);
+    font-size: clamp(34px, 6vw, 58px);
+    line-height: 1.08;
+    text-align: left;
+    text-shadow: none;
+}
+
+.article-header p,
+.article-page p,
+.article-page li {
+    color: rgb(89, 101, 86);
+    font-size: 18px;
+    line-height: 1.75;
+}
+
+.article-header p {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.article-page section {
+    padding: 28px 0;
+    border-bottom: 1px solid rgba(91, 170, 35, 0.12);
+}
+
+.article-page h2 {
+    margin-bottom: 16px;
+    color: rgb(31, 45, 29);
+    font-size: 29px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.article-page p + p {
+    margin-top: 14px;
+}
+
+.article-page ul {
+    display: grid;
+    gap: 8px;
+    margin: 14px 0 0 22px;
+}
+
+.article-page li + li {
+    margin-top: 2px;
 }
 
 /* KONTAKT CONTAINER */
