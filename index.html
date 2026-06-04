@@ -9,6 +9,7 @@
 
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/c1fa55bd37.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -33,7 +34,7 @@
         </nav>
 
         <div class="icons-right">
-            <a href="https://www.instagram.com/back2live.cz/" class="ig-link" target="_blank">
+            <a href="https://www.instagram.com/back2live.cz/" class="ig-link" target="_blank" aria-label="Instagram Back2Live">
                 <i class="fa fa-instagram ig-icon"></i>
             </a>
         </div>
@@ -42,12 +43,11 @@
     <main>
         <section class="hero">
             <div class="hero__content">
-                <h2>LEPŠÍ SPÁNEK. LEPŠÍ MYSL. LEPŠÍ REŽIM.</h2>
-                <p>Jednoduché návyky, ověřené informace a praktická řešení pro lepší každodenní fungování.</p>
+                <h2>Lepší spánek. Klidnější hlava. Silnější režim.</h2>
+                <p>Jednoduché návyky, ověřené informace a praktická řešení pro zdravější každodenní fungování.</p>
 
                 <div class="hero__actions">
-                    <a href="spanek.html" class="button-primary">Prozkoumat témata</a>
-                    <a href="#start" class="button-secondary">Začít tady</a>
+                    <a href="#start" class="button-primary">Začít tady</a>
                 </div>
             </div>
 
@@ -62,7 +62,8 @@
 
         <section class="problem-grid" aria-label="Hlavní problémy">
             <article class="problem-card">
-                <span class="problem-card__icon" aria-hidden="true">😴</span>
+                <span class="problem-card__icon" aria-hidden="true">
+                    <i class="fa-solid fa-bed"></i></span>
                 <h3>Špatný spánek</h3>
                 <ul>
                     <li>méně energie</li>
@@ -71,7 +72,8 @@
             </article>
 
             <article class="problem-card">
-                <span class="problem-card__icon" aria-hidden="true">🧠</span>
+                <span class="problem-card__icon" aria-hidden="true">
+                    <i class="fa-regular fa-face-tired"></i></span>
                 <h3>Přetížená hlava</h3>
                 <ul>
                     <li>mentální únava</li>
@@ -80,7 +82,8 @@
             </article>
 
             <article class="problem-card">
-                <span class="problem-card__icon" aria-hidden="true">⚡</span>
+                <span class="problem-card__icon" aria-hidden="true">
+                    <i class="fa-regular fa-clock"></i></span>
                 <h3>Chaos v režimu</h3>
                 <ul>
                     <li>nekonzistence</li>
@@ -90,37 +93,37 @@
         </section>
 
         <section class="latest-section">
-            <p class="section-kicker">↓ scroll</p>
-            <h2>NEJNOVĚJŠÍ ČLÁNKY</h2>
+            <p class="section-kicker">nové články</p>
+            <h2>Čti podle toho, co právě řešíš</h2>
 
             <div class="article-list">
-                <a href="spanek.html">Proč jsi pořád unavený</a>
-                <a href="spanek.html">Co ničí spánek víc než mobil</a>
-                <a href="mysl.html">Jak stres ovlivňuje regeneraci</a>
+                <a href="clanky%20spanek/1.spanek.html">Proč jsi pořád unavený</a>
+                <a href="clanky%20spanek/2.spanek.html">Co ničí spánek víc než mobil</a>
+                <a href="clanky%20mysl/1.mysl.html">Jak stres ovlivňuje regeneraci</a>
             </div>
         </section>
 
         <section class="products-section">
-            <p class="section-kicker">↓ scroll</p>
-            <h2>DOPORUČENÉ PRODUKTY</h2>
+            <p class="section-kicker">doporučené produkty</p>
+            <h2>Malé věci, které pomáhají držet režim</h2>
 
             <div class="product-grid">
                 <article class="product-card">
-                    <h3>MASKA<br>NA SPANÍ</h3>
+                    <h3>Maska na spaní</h3>
                     <p>Lepší prostředí pro kvalitní spánek.</p>
-                    <a href="produkty.html">zobrazit</a>
+                    <a href="navbar/produkty.html">zobrazit</a>
                 </article>
 
                 <article class="product-card">
-                    <h3>ČERVENÉ<br>BRÝLE</h3>
+                    <h3>Červené brýle</h3>
                     <p>Méně modrého světla večer.</p>
-                    <a href="produkty.html">zobrazit</a>
+                    <a href="navbar/produkty.html">zobrazit</a>
                 </article>
 
                 <article class="product-card">
-                    <h3>SHAKER</h3>
+                    <h3>Shaker</h3>
                     <p>Jednoduchý doplněk pro každodenní režim.</p>
-                    <a href="produkty.html">zobrazit</a>
+                    <a href="navbar/produkty.html">zobrazit</a>
                 </article>
             </div>
         </section>
@@ -132,7 +135,8 @@
             </blockquote>
         </section>
     </main>
-    <script src="/script.js"></script>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

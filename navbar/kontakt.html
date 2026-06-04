@@ -19,7 +19,7 @@
 
     <main class="contact-page">
         <section class="contact-options" aria-label="Možnosti kontaktu">
-            <a href="mailto:back2live@seznam.cz" class="contact-option">
+            <a href="mailto:backlive@seznam.cz" class="contact-option">
                 <i class="fa fa-envelope email-icon"></i>
                 <span>
                     <strong>E-mail</strong>
@@ -41,12 +41,15 @@
                 <h2>Napiš dotaz</h2>
                 <p>Stačí pár vět. Co řešíš, co tě zajímá nebo s čím chceš pomoct?</p>
 
-                <form class="contact-form" action="mailto:back2live@seznam.cz" method="post" enctype="text/plain">
+                <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="1a6b7f9a-b923-469f-9a7a-6e05bbebfa3c">
+                    <input type="hidden" name="subject" value="Novy dotaz z Back2Live">
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                     <label for="name">Jméno</label>
-                    <input type="text" id="name" name="jmeno" placeholder="Tvoje jméno">
+                    <input type="text" id="name" name="name" placeholder="Tvoje jméno" required>
 
                     <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" placeholder="tvuj@email.cz">
+                    <input type="email" id="email" name="email" placeholder="tvuj@email.cz" required>
 
                     <label for="topic">Téma</label>
                     <select id="topic" name="tema">
@@ -57,7 +60,7 @@
                     </select>
 
                     <label for="message">Zpráva</label>
-                    <textarea id="message" name="zprava" rows="6" placeholder="Napiš, co potřebuješ probrat."></textarea>
+                    <textarea id="message" name="message" rows="6" placeholder="Napiš, co potřebuješ probrat." required></textarea>
 
                     <button type="submit">Odeslat dotaz</button>
                 </form>
