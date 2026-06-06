@@ -3313,3 +3313,156 @@ body:not(.modern-home) .catalog-grid {
         margin-bottom: 20px;
     }
 }
+
+/* FINAL GITHUB PAGES VISUAL MATCH */
+
+body:not(.modern-home) .page {
+    min-height: 235px;
+    display: grid;
+    align-content: center;
+    padding: clamp(48px, 7vw, 76px);
+}
+
+body:not(.modern-home) .contact-page {
+    margin-top: 34px;
+}
+
+body:not(.modern-home) .contact-options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+body:not(.modern-home) .contact-option {
+    min-height: 118px;
+    padding: 26px;
+}
+
+body:not(.modern-home) .contact-panel,
+body:not(.modern-home) .contact-aside,
+body:not(.modern-home) .about-section,
+body:not(.modern-home) .about-philosophy {
+    min-height: 300px;
+    padding: clamp(38px, 6vw, 62px);
+}
+
+body:not(.modern-home) .contact-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+    gap: 22px;
+    align-items: stretch;
+}
+
+body:not(.modern-home) .contact-aside {
+    display: grid;
+    align-content: start;
+}
+
+body:not(.modern-home) .product-catalog {
+    width: min(1120px, calc(100% - 40px));
+    margin-top: 34px;
+}
+
+body:not(.modern-home) .catalog-category {
+    display: grid;
+    grid-template-columns: minmax(180px, 230px) minmax(0, 1fr);
+    gap: 22px;
+    align-items: stretch;
+    margin-top: 24px;
+    padding: 30px;
+    border: 1px solid rgba(38, 94, 47, 0.12);
+    border-radius: 24px;
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(237, 247, 233, 0.76));
+    box-shadow: 0 16px 42px rgba(37, 95, 50, 0.09);
+}
+
+body:not(.modern-home) .catalog-category__header {
+    width: 100%;
+    min-height: 0;
+    margin: 0;
+    padding: 16px 14px;
+    align-self: start;
+    border: 1px solid rgba(38, 94, 47, 0.14);
+    border-radius: 18px;
+    background:
+        linear-gradient(145deg, #ffffff, #edf7e9);
+    box-shadow: 0 12px 30px rgba(37, 95, 50, 0.08);
+}
+
+body:not(.modern-home) .catalog-category__header span {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    color: #245f32;
+    border-radius: 14px;
+    background: rgba(45, 112, 64, 0.1);
+}
+
+body:not(.modern-home) .catalog-category__header h2 {
+    font-size: 22px;
+}
+
+.sleep-chart--performance,
+.sleep-duration-card {
+    border-color: rgba(45, 112, 64, 0.16);
+    background:
+        linear-gradient(145deg, #edf7e9, #ffffff);
+    box-shadow: 0 18px 48px rgba(37, 95, 50, 0.1);
+}
+
+.sleep-chart--performance .sleep-chart__figure {
+    border-color: rgba(45, 112, 64, 0.16);
+    background:
+        linear-gradient(180deg, #ffffff, #f3faf0);
+}
+
+.sleep-chart--performance .chart-axis line {
+    stroke: rgba(36, 95, 50, 0.4);
+}
+
+.sleep-chart--performance .chart-axis text,
+.sleep-chart--performance .chart-labels text,
+.sleep-chart--performance .chart-notes text {
+    fill: #245f32;
+}
+
+.sleep-chart--performance .performance-bar {
+    fill: #79bd48;
+}
+
+.sleep-chart--performance .performance-bar--base {
+    fill: #b7e5a7;
+}
+
+.sleep-chart--performance .performance-bar--high {
+    fill: #245f32;
+}
+
+.sleep-duration-card__header h2,
+.sleep-duration-grid strong {
+    color: #17231c;
+}
+
+.sleep-duration-card__header p:last-child,
+.sleep-duration-grid span {
+    color: #526157;
+}
+
+@media (max-width: 860px) {
+    body:not(.modern-home) .contact-options,
+    body:not(.modern-home) .contact-layout,
+    body:not(.modern-home) .catalog-category {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    body:not(.modern-home) .page,
+    body:not(.modern-home) .contact-panel,
+    body:not(.modern-home) .contact-aside,
+    body:not(.modern-home) .about-section,
+    body:not(.modern-home) .about-philosophy {
+        min-height: auto;
+    }
+}
