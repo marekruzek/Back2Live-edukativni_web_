@@ -3466,3 +3466,85 @@ body:not(.modern-home) .catalog-category__header h2 {
         min-height: auto;
     }
 }
+
+/* SLEEP AGE RANGE LINES */
+
+.sleep-age-chart {
+    display: grid;
+    gap: 14px;
+}
+
+.sleep-age-chart article {
+    display: grid;
+    grid-template-columns: minmax(92px, 0.42fr) minmax(160px, 1fr);
+    gap: 14px;
+    align-items: center;
+}
+
+.sleep-age-chart > article > span {
+    color: #526157;
+    font-size: 13px;
+    font-weight: 850;
+    line-height: 1.2;
+}
+
+.sleep-age-chart__track {
+    position: relative;
+    min-height: 34px;
+}
+
+.sleep-age-chart__track::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 6px;
+    border-radius: 999px;
+    background:
+        linear-gradient(90deg, rgba(183, 229, 167, 0.34), rgba(45, 112, 64, 0.22));
+    transform: translateY(-50%);
+}
+
+.sleep-age-chart__track::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: var(--pos);
+    width: 16px;
+    height: 16px;
+    border: 4px solid #ffffff;
+    border-radius: 999px;
+    background: #245f32;
+    box-shadow: 0 8px 18px rgba(37, 95, 50, 0.22);
+    transform: translate(-50%, -50%);
+}
+
+.sleep-age-chart__track strong {
+    position: absolute;
+    top: 50%;
+    left: var(--pos);
+    z-index: 1;
+    padding: 5px 8px;
+    color: #245f32;
+    font-size: 13px;
+    font-weight: 900;
+    line-height: 1;
+    white-space: nowrap;
+    border: 1px solid rgba(45, 112, 64, 0.14);
+    border-radius: 999px;
+    background: #ffffff;
+    box-shadow: 0 8px 18px rgba(37, 95, 50, 0.1);
+    transform: translate(calc(-50% + 28px), -50%);
+}
+
+@media (max-width: 620px) {
+    .sleep-age-chart article {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .sleep-age-chart__track strong {
+        transform: translate(-50%, -132%);
+    }
+}
