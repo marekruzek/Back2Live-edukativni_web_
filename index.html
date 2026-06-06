@@ -12,100 +12,242 @@
     <script src="https://kit.fontawesome.com/c1fa55bd37.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
-    <h1 class="home-title">Back2Live</h1>
-
-    <div class="topbar">
-        <nav class="navbar">
-            <div class="dropdown">
-                <a href="#">Témata</a>
-
-                <div class="dropdown-menu">
-                    <a href="temata/spanek.html">Spánek</a>
-                    <a href="temata/mysl.html">Mysl</a>
-                    <a href="temata/vyziva.html">Strava</a>
-                    <a href="temata/trenink.html">Trénink</a>
-                </div>
-            </div>
-
-            <a href="navbar/produkty.html">Produkty</a>
-            <a href="navbar/o-nas.html">O projektu</a>
-            <a href="navbar/kontakt.html">Kontakt</a>
-        </nav>
-
-        <div class="icons-right">
-            <a href="https://www.instagram.com/back2live.cz/" class="ig-link" target="_blank" aria-label="Instagram Back2Live">
-                <i class="fa fa-instagram ig-icon"></i>
-            </a>
-        </div>
+<body class="modern-home">
+    <div class="scroll-progress" aria-hidden="true">
+        <span id="scrollProgress"></span>
     </div>
 
-    <main>
-        <section class="hero">
+    <header class="site-header">
+        <a href="index.html" class="brand">Back2Live</a>
+
+        <div class="topbar">
+            <nav class="navbar">
+                <div class="dropdown">
+                    <a href="#">Témata</a>
+
+                    <div class="dropdown-menu">
+                        <a href="temata/spanek.html">Spánek</a>
+                        <a href="temata/mysl.html">Mysl</a>
+                        <a href="temata/vyziva.html">Strava</a>
+                        <a href="temata/trenink.html">Trénink</a>
+                    </div>
+                </div>
+
+                <a href="navbar/produkty.html">Produkty</a>
+                <a href="navbar/o-nas.html">O projektu</a>
+                <a href="navbar/kontakt.html">Kontakt</a>
+            </nav>
+
+            <div class="icons-right">
+                <a href="https://www.instagram.com/back2live.cz/" class="ig-link" target="_blank" aria-label="Instagram Back2Live">
+                    <i class="fa fa-instagram ig-icon"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="article-shell">
+        <section class="hero article-hero">
             <div class="hero__content">
-                <h2>Lepší spánek. Klidnější hlava. Silnější režim.</h2>
+                <p class="section-kicker">zdravý životní styl bez extrémů</p>
+                <h1>Lepší spánek. Klidnější hlava. Silnější režim.</h1>
                 <p>Jednoduché návyky, ověřené informace a praktická řešení pro zdravější každodenní fungování.</p>
 
                 <div class="hero__actions">
                     <a href="#start" class="button-primary">Začít tady</a>
                 </div>
+
+                <div class="article-meta">
+                    <span><i class="fa-solid fa-bed"></i> spánek</span>
+                    <span><i class="fa-solid fa-brain"></i> mysl</span>
+                    <span><i class="fa-solid fa-dumbbell"></i> trénink</span>
+                </div>
             </div>
 
-            <div class="hero__visual" aria-hidden="true">
-                <span></span>
+            <div class="wellness-illustration" aria-hidden="true">
+                <span class="orbit orbit-one"></span>
+                <span class="orbit orbit-two"></span>
+
+                <div class="wellness-card sleep">
+                    <i class="fa-solid fa-moon"></i>
+                    <span>spánek</span>
+                </div>
+
+                <div class="wellness-card focus">
+                    <i class="fa-solid fa-brain"></i>
+                    <span>focus</span>
+                </div>
+
+                <div class="wellness-card routine">
+                    <i class="fa-solid fa-clock"></i>
+                    <span>režim</span>
+                </div>
             </div>
         </section>
 
-        <section class="statement" id="start">
+        <section class="content-panel toc-panel" id="start">
+            <div>
+                <p class="section-kicker">začni tady</p>
+                <h2>Back2Live stojí na malých věcech, které se dají držet dlouhodobě.</h2>
+            </div>
+
+            <ol class="toc-list">
+                <li><a href="clanky%20spanek/2.spanek.html">Zjisti, co nejvíc rozbíjí energii</a></li>
+                <li><a href="#navyky">Vyber si jednoduchý návyk</a></li>
+                <li><a href="#produkty">Doplň režim praktickou pomůckou</a></li>
+            </ol>
+        </section>
+
+        <section class="statement">
             <p>Většina lidí není líná. Jen mají rozbitý režim a přetíženou hlavu.</p>
         </section>
 
-        <section class="problem-grid" aria-label="Hlavní problémy">
-            <article class="problem-card">
-                <span class="problem-card__icon" aria-hidden="true">
-                    <i class="fa-solid fa-bed"></i></span>
-                <h3>Špatný spánek</h3>
-                <ul>
-                    <li>méně energie</li>
-                    <li>horší regenerace</li>
-                </ul>
-            </article>
+        <section class="content-panel" id="pilire">
+            <p class="section-kicker">spánek a výkon</p>
+            <h2>Jak nedostatek spánku ovlivňuje výkon?</h2>
 
-            <article class="problem-card">
-                <span class="problem-card__icon" aria-hidden="true">
-                    <i class="fa-regular fa-face-tired"></i></span>
-                <h3>Přetížená hlava</h3>
-                <ul>
-                    <li>mentální únava</li>
-                    <li>horší focus</li>
-                </ul>
-            </article>
+            <div class="sleep-chart sleep-chart--performance">
+                <div class="sleep-chart__copy">
+                    <span class="chart-badge">graf výkonu</span>
+                    <p>Studie Williamson & Dawson 2000 ukazuje, že delší bdělost může výkonem připomínat stav po alkoholu.</p>
 
-            <article class="problem-card">
-                <span class="problem-card__icon" aria-hidden="true">
-                    <i class="fa-regular fa-clock"></i></span>
-                <h3>Chaos v režimu</h3>
-                <ul>
-                    <li>nekonzistence</li>
-                    <li>minimum pohybu</li>
-                </ul>
-            </article>
-        </section>
+                    <div class="chart-legend">
+                        <span><i class="legend-dot legend-dot--rested"></i> 17-19 h vzhůru ≈ BAC 0,05 %</span>
+                        <span><i class="legend-dot legend-dot--deprived"></i> 24 h vzhůru ≈ BAC 0,10 %</span>
+                    </div>
 
-        <section class="latest-section">
-            <p class="section-kicker">nové články</p>
-            <h2>Čti podle toho, co právě řešíš</h2>
+                    <p class="chart-source">BAC = blood alcohol concentration. Hodnoty jsou přibližné srovnání výkonu, ne měření alkoholu v krvi.</p>
+                </div>
 
-            <div class="article-list">
-                <a href="clanky%20spanek/1.spanek.html">Proč jsi pořád unavený</a>
-                <a href="clanky%20spanek/2.spanek.html">Co ničí spánek víc než mobil</a>
-                <a href="clanky%20mysl/1.mysl.html">Jak stres ovlivňuje regeneraci</a>
+                <div class="sleep-chart__figure">
+                    <svg viewBox="0 0 640 360" role="img" aria-labelledby="sleepChartTitle sleepChartDesc">
+                        <title id="sleepChartTitle">Jak nedostatek spánku ovlivňuje výkon</title>
+                        <desc id="sleepChartDesc">Sloupcový graf porovnává 17 až 19 hodin vzhůru s BAC 0,05 procenta a 24 hodin vzhůru s BAC 0,10 procenta.</desc>
+
+                        <g class="chart-grid">
+                            <line x1="80" y1="70" x2="590" y2="70"></line>
+                            <line x1="80" y1="120" x2="590" y2="120"></line>
+                            <line x1="80" y1="170" x2="590" y2="170"></line>
+                            <line x1="80" y1="220" x2="590" y2="220"></line>
+                            <line x1="80" y1="270" x2="590" y2="270"></line>
+                        </g>
+
+                        <g class="chart-axis">
+                            <line x1="80" y1="50" x2="80" y2="270"></line>
+                            <line x1="80" y1="270" x2="590" y2="270"></line>
+                            <text x="22" y="74">0,10 %</text>
+                            <text x="22" y="174">0,05 %</text>
+                            <text x="36" y="274">0 %</text>
+                        </g>
+
+                        <rect class="performance-bar performance-bar--base" x="138" y="266" width="92" height="4" rx="8"></rect>
+                        <rect class="performance-bar" x="282" y="170" width="92" height="100" rx="12"></rect>
+                        <rect class="performance-bar performance-bar--high" x="426" y="70" width="92" height="200" rx="12"></rect>
+
+                        <g class="chart-notes">
+                            <text x="148" y="250">vyspalý</text>
+                            <text x="286" y="154">0,05 %</text>
+                            <text x="430" y="54">0,10 %</text>
+                        </g>
+
+                        <g class="chart-labels">
+                            <text x="130" y="312">0 h</text>
+                            <text x="260" y="312">17-19 h vzhůru</text>
+                            <text x="420" y="312">24 h vzhůru</text>
+                        </g>
+                    </svg>
+
+                    <div class="chart-callout">
+                        <strong>Nedostatek spánku není drobnost</strong>
+                        <span>Po 24 hodinách vzhůru může být výkon zhoršený podobně jako při BAC 0,10 %.</span>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="products-section">
+        <section class="sleep-duration-card" aria-label="Doporučená délka spánku podle věku">
+            <div class="sleep-duration-card__header">
+                <p class="section-kicker">doporučená délka spánku</p>
+                <h2>Kolik spánku podle věku?</h2>
+                <p>Orientační rozsahy podle National Sleep Foundation. Čím delší pruh, tím vyšší doporučený rozsah hodin.</p>
+            </div>
+
+            <div class="sleep-age-chart">
+                <article style="--pos: 91%;">
+                    <span>0-3 měsíce</span>
+                    <div class="sleep-age-chart__track"><strong>14-17 h</strong></div>
+                </article>
+
+                <article style="--pos: 79%;">
+                    <span>4-11 měsíců</span>
+                    <div class="sleep-age-chart__track"><strong>12-15 h</strong></div>
+                </article>
+
+                <article style="--pos: 74%;">
+                    <span>1-2 roky</span>
+                    <div class="sleep-age-chart__track"><strong>11-14 h</strong></div>
+                </article>
+
+                <article style="--pos: 68%;">
+                    <span>3-5 let</span>
+                    <div class="sleep-age-chart__track"><strong>10-13 h</strong></div>
+                </article>
+
+                <article style="--pos: 59%;">
+                    <span>6-13 let</span>
+                    <div class="sleep-age-chart__track"><strong>9-11 h</strong></div>
+                </article>
+
+                <article style="--pos: 53%;">
+                    <span>14-17 let</span>
+                    <div class="sleep-age-chart__track"><strong>8-10 h</strong></div>
+                </article>
+
+                <article style="--pos: 47%;">
+                    <span>18-25 let</span>
+                    <div class="sleep-age-chart__track"><strong>7-9 h</strong></div>
+                </article>
+
+                <article style="--pos: 47%;">
+                    <span>26-64 let</span>
+                    <div class="sleep-age-chart__track"><strong>7-9 h</strong></div>
+                </article>
+
+                <article style="--pos: 44%;">
+                    <span>65+ let</span>
+                    <div class="sleep-age-chart__track"><strong>7-8 h</strong></div>
+                </article>
+            </div>
+        </section>
+
+        <section class="content-panel shade-panel" id="navyky">
+            <p class="section-kicker">prakticky</p>
+            <h2>Začni jedním návykem.</h2>
+
+            <div class="habit-list">
+                <article>
+                    <i class="fa-solid fa-moon"></i>
+                    <h3>Večer stáhni světlo</h3>
+                    <p>Poslední hodinu před spaním zklidni prostředí a dej hlavě signál, že den končí.</p>
+                </article>
+
+                <article>
+                    <i class="fa-solid fa-bottle-water"></i>
+                    <h3>Ráno doplň vodu</h3>
+                    <p>Jednoduchý start dne bez složité rutiny. Malý krok, který se dobře drží.</p>
+                </article>
+
+                <article>
+                    <i class="fa-solid fa-person-walking"></i>
+                    <h3>Hýbej se denně</h3>
+                    <p>Nemusí to být trénink do selhání. Konzistence je silnější než občasný extrém.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="content-panel" id="produkty">
             <p class="section-kicker">doporučené produkty</p>
-            <h2>Malé věci, které pomáhají držet režim</h2>
+            <h2>Malé věci, které pomáhají držet režim.</h2>
 
             <div class="product-grid">
                 <article class="product-card">
@@ -128,13 +270,37 @@
             </div>
         </section>
 
-        <section class="quote-section">
-            <blockquote>
-                „Nejde o perfektní život.<br>
-                Jde o systém, který dokážeš udržet.“
-            </blockquote>
+        <section class="fact-quote fact-quote--soft">
+            <span>myšlenka</span>
+            <p>Nejde o perfektní život. Jde o systém, ke kterému se dokážeš vracet.</p>
+        </section>
+
+        <section class="content-panel" id="souvisejici">
+            <p class="section-kicker">nejnovější články</p>
+            <h2>Čti podle toho, co právě řešíš.</h2>
+
+            <div class="related-grid">
+                <a href="clanky trenink/1.trenink.html">
+                    <span>spánek</span>
+                    <strong>Proč většina lidí nevydrží cvičit</strong>
+                </a>
+
+                <a href="clanky%20spanek/2.spanek.html">
+                    <span>spánek</span>
+                    <strong>Co ničí spánek víc než mobil</strong>
+                </a>
+
+                <a href="clanky%20mysl/1.mysl.html">
+                    <span>mysl</span>
+                    <strong>Jak stres ovlivňuje regeneraci</strong>
+                </a>
+            </div>
         </section>
     </main>
+
+    <button class="back-to-top" type="button" aria-label="Zpět nahoru">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
     <script src="script.js"></script>
 </body>
