@@ -3881,8 +3881,10 @@ body:not(.modern-home) .catalog-category__header h2 {
     }
 
     .modern-home .icons-right {
-        position: static;
-        justify-self: center;
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        justify-self: auto;
     }
 
     .article-shell {
