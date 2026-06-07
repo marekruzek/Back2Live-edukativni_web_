@@ -1854,7 +1854,7 @@ a.contact-option {
     display: grid;
     place-items: center;
     min-height: 300px;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .wellness-illustration::before,
