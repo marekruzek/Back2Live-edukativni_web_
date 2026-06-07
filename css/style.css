@@ -3928,12 +3928,11 @@ body:not(.modern-home) .catalog-category__header h2 {
     }
 
     .article-meta {
-        gap: 8px;
+        display: none;
     }
 
     .wellness-illustration {
-        min-height: 260px;
-        overflow: hidden;
+        display: none;
     }
 
     .orbit-one {
