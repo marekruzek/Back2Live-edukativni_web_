@@ -3745,6 +3745,9 @@ body:not(.modern-home) .catalog-product .catalog-product__contact {
 }
 
 body:not(.modern-home) .catalog-category__header {
+    display: grid !important;
+    grid-template-columns: 1fr;
+    justify-items: center !important;
     justify-self: center;
     align-self: center;
     width: min(100%, 168px) !important;
@@ -3754,7 +3757,14 @@ body:not(.modern-home) .catalog-category__header {
     place-items: center;
 }
 
+body:not(.modern-home) .catalog-category__header span {
+    justify-self: center !important;
+    margin: 0 auto !important;
+}
+
 body:not(.modern-home) .catalog-category__header h2 {
+    width: 100%;
+    margin: 0 !important;
     font-size: 18px !important;
     text-align: center !important;
     text-wrap: balance;
