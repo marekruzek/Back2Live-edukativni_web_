@@ -3614,7 +3614,7 @@ body:not(.modern-home) .about-philosophy p {
 }
 
 body:not(.modern-home) .about-philosophy .about-values span {
-    color: #245f32 !important;
+    color: #17231c !important;
     border-color: rgba(45, 112, 64, 0.16) !important;
     background: rgba(45, 112, 64, 0.08) !important;
 }
@@ -3622,8 +3622,8 @@ body:not(.modern-home) .about-philosophy .about-values span {
 body:not(.modern-home) .about-philosophy blockquote {
     color: #ffffff !important;
     background:
-        linear-gradient(135deg, #245f32, #2d7040) !important;
-    box-shadow: 0 18px 42px rgba(37, 95, 50, 0.18) !important;
+        linear-gradient(135deg, #526157, #2d7040) !important;
+    box-shadow: 0 18px 42px rgba(82, 97, 87, 0.18) !important;
 }
 
 /* REMOVE TOPIC CARD CORNER DECORATION */
