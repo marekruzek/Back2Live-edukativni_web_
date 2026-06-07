@@ -3444,7 +3444,7 @@ body:not(.modern-home) .catalog-category__header h2 {
 }
 
 .sleep-chart--performance .legend-dot--rested {
-    background: #5baa23;
+    background: #526157;
 }
 
 .sleep-chart--performance .legend-dot--deprived {
@@ -3472,11 +3472,11 @@ body:not(.modern-home) .catalog-category__header h2 {
 }
 
 .sleep-chart--performance .performance-bar {
-    fill: #79bd48;
+    fill: #526157;
 }
 
 .sleep-chart--performance .performance-bar--base {
-    fill: #b7e5a7;
+    fill: #d8e6d4;
 }
 
 .sleep-chart--performance .performance-bar--high {
