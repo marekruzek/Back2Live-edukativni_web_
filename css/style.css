@@ -2453,8 +2453,8 @@ a.contact-option {
         linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(247, 250, 241, 0.86));
 }
 
-.fact-quote--soft {
-    grid-column: 9 / -1;
+.modern-home .fact-quote--soft {
+    grid-column: 1 / -1;
 }
 
 .modern-home #souvisejici {
