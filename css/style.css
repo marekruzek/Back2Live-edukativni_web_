@@ -3995,12 +3995,24 @@ body:not(.modern-home) .catalog-category__header h2 {
     }
 
     .modern-home .navbar {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 8px;
+        width: 100%;
         padding: 10px;
         border-radius: 16px;
+        overflow: visible;
+    }
+
+    .modern-home .navbar .dropdown,
+    .modern-home .navbar a {
+        width: 100%;
     }
 
     .modern-home .navbar a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         min-height: 38px;
         padding: 0 10px;
         font-size: 13px;
@@ -4123,8 +4135,7 @@ body:not(.modern-home) .catalog-category__header h2 {
 
 @media (max-width: 390px) {
     .modern-home .navbar {
-        justify-content: flex-start;
-        overflow-x: auto;
+        grid-template-columns: 1fr;
     }
 
     .article-hero h1 {
