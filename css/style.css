@@ -3994,6 +3994,10 @@ body:not(.modern-home) .catalog-category__header h2 {
         width: min(100% - 22px, 560px);
     }
 
+    .modern-home .sleep-duration-card {
+        display: none;
+    }
+
     .modern-home .navbar {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
