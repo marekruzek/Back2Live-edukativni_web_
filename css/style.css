@@ -3975,11 +3975,12 @@ body:not(.modern-home) .catalog-category__header h2 {
 
     .sleep-chart__figure {
         min-height: auto;
-        overflow-x: auto;
+        overflow-x: visible;
     }
 
     .sleep-chart svg {
-        min-width: 560px;
+        min-width: 0;
+        width: 100%;
     }
 
     .habit-list,
@@ -4105,12 +4106,20 @@ body:not(.modern-home) .catalog-category__header h2 {
     }
 
     .sleep-chart svg {
-        min-width: 520px;
+        min-width: 0;
     }
 
     .chart-callout {
         width: 100%;
         margin-top: 12px;
+    }
+
+    .chart-callout strong {
+        font-size: 13px;
+    }
+
+    .chart-callout span {
+        font-size: 12px;
     }
 
     .sleep-age-chart {
@@ -4147,6 +4156,6 @@ body:not(.modern-home) .catalog-category__header h2 {
     }
 
     .sleep-chart svg {
-        min-width: 500px;
+        min-width: 0;
     }
 }
