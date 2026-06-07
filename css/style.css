@@ -3692,12 +3692,7 @@ body:not(.modern-home) .catalog-product {
 }
 
 body:not(.modern-home) .catalog-product::before {
-    content: "";
-    position: absolute;
-    inset: 0 0 auto;
-    height: 4px;
-    border-radius: 22px 22px 0 0;
-    background: linear-gradient(90deg, #526157, #2d7040);
+    display: none;
 }
 
 body:not(.modern-home) .catalog-product h3 {
@@ -3749,6 +3744,22 @@ body:not(.modern-home) .catalog-product .catalog-product__contact {
     white-space: normal;
 }
 
+body:not(.modern-home) .catalog-category__header {
+    justify-self: center;
+    align-self: center;
+    width: min(100%, 168px) !important;
+    margin: 0 auto 14px !important;
+    padding: 12px 10px !important;
+    text-align: center !important;
+    place-items: center;
+}
+
+body:not(.modern-home) .catalog-category__header h2 {
+    font-size: 18px !important;
+    text-align: center !important;
+    text-wrap: balance;
+}
+
 @media (min-width: 920px) {
     body:not(.modern-home) .product-catalog {
         margin: 14px auto 28px;
@@ -3762,7 +3773,12 @@ body:not(.modern-home) .catalog-product .catalog-product__contact {
     }
 
     body:not(.modern-home) .catalog-category__header {
-        padding: 12px;
+        display: inline-grid;
+        justify-self: center;
+        align-self: center;
+        width: min(100%, 168px);
+        padding: 12px 10px;
+        place-items: center;
     }
 
     body:not(.modern-home) .catalog-category__header span {
@@ -3771,7 +3787,9 @@ body:not(.modern-home) .catalog-product .catalog-product__contact {
     }
 
     body:not(.modern-home) .catalog-category__header h2 {
-        font-size: 20px;
+        font-size: 18px;
+        text-align: center;
+        text-wrap: balance;
     }
 
     body:not(.modern-home) .catalog-grid {
