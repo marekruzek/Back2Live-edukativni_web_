@@ -3330,6 +3330,12 @@ body:not(.modern-home) .contact-option {
     background: rgba(255, 255, 255, 0.82);
 }
 
+body:not(.modern-home) .contact-option--aside {
+    min-height: auto;
+    margin-top: 22px;
+    padding: 16px;
+}
+
 body:not(.modern-home) .contact-layout {
     display: grid;
     grid-template-columns: minmax(0, 1.32fr) minmax(280px, 0.68fr);
