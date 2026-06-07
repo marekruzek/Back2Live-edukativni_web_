@@ -1727,15 +1727,15 @@ a.contact-option {
     inset: 0 0 auto;
     z-index: 100;
     height: 4px;
-    background: rgba(38, 94, 47, 0.08);
+    background: rgba(35, 92, 50, 0.08);
 }
 
 .scroll-progress span {
     display: block;
     width: 0;
     height: 100%;
-    background: linear-gradient(90deg, #255f32, #6dbd54);
-    box-shadow: 0 0 18px rgba(82, 156, 50, 0.32);
+    background: #235c32;
+    box-shadow: 0 0 18px rgba(35, 92, 50, 0.28);
 }
 
 .site-header {
