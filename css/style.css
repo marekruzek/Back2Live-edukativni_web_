@@ -3727,7 +3727,8 @@ body:not(.modern-home) .catalog-product__emoji {
     place-items: center;
     width: 42px;
     height: 42px;
-    font-size: 24px;
+    color: #245f32;
+    font-size: 20px;
     border-radius: 14px;
     background: #ffffff;
     box-shadow: 0 10px 22px rgba(82, 97, 87, 0.12);
@@ -3746,4 +3747,88 @@ body:not(.modern-home) .catalog-product .catalog-product__contact {
     color: #526157 !important;
     font-size: 15px !important;
     white-space: normal;
+}
+
+@media (min-width: 920px) {
+    body:not(.modern-home) .product-catalog {
+        margin: 14px auto 28px;
+    }
+
+    body:not(.modern-home) .catalog-category {
+        grid-template-columns: minmax(160px, 190px) minmax(0, 1fr);
+        gap: 16px;
+        margin-top: 14px;
+        padding: 18px;
+    }
+
+    body:not(.modern-home) .catalog-category__header {
+        padding: 12px;
+    }
+
+    body:not(.modern-home) .catalog-category__header span {
+        width: 36px;
+        height: 36px;
+    }
+
+    body:not(.modern-home) .catalog-category__header h2 {
+        font-size: 20px;
+    }
+
+    body:not(.modern-home) .catalog-grid {
+        gap: 12px;
+    }
+
+    body:not(.modern-home) .catalog-product {
+        min-height: 158px;
+        padding: 18px;
+    }
+
+    body:not(.modern-home) .catalog-product h3 {
+        font-size: 20px;
+    }
+
+    body:not(.modern-home) .catalog-product__description {
+        min-height: 48px;
+        margin-top: 12px !important;
+        padding: 10px 12px;
+        font-size: 15px !important;
+    }
+
+    body:not(.modern-home) .catalog-product__emoji {
+        width: 36px;
+        height: 36px;
+        font-size: 17px;
+        border-radius: 12px;
+    }
+
+    body:not(.modern-home) .catalog-product strong {
+        margin-top: 12px;
+        padding: 6px 9px;
+        font-size: 13px;
+    }
+
+    body:not(.modern-home) .catalog-product .catalog-product__contact {
+        margin-top: 10px;
+        font-size: 14px !important;
+    }
+}
+
+@media (max-width: 860px) {
+    body:not(.modern-home) .catalog-product {
+        min-height: auto;
+    }
+
+    body:not(.modern-home) .catalog-product__description {
+        grid-template-columns: minmax(0, 1fr) auto;
+    }
+}
+
+@media (max-width: 420px) {
+    body:not(.modern-home) .catalog-product__description {
+        grid-template-columns: 1fr;
+    }
+
+    body:not(.modern-home) .catalog-product__emoji {
+        justify-self: start;
+    }
 }
