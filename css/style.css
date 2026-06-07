@@ -3251,6 +3251,7 @@ body:not(.modern-home) .about-list {
 
 body:not(.modern-home) .about-list li {
     border-radius: 16px;
+    color: #17231c !important;
     background: rgba(45, 112, 64, 0.08);
 }
 
