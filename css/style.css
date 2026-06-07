@@ -3860,3 +3860,277 @@ body:not(.modern-home) .catalog-category__header h2 {
         justify-self: start;
     }
 }
+
+/* HOME RESPONSIVE POLISH */
+
+@media (max-width: 1023px) {
+    .modern-home .site-header {
+        width: min(100% - 28px, 760px);
+        margin-top: 22px;
+    }
+
+    .modern-home .brand {
+        margin-bottom: 14px;
+        font-size: clamp(34px, 8vw, 52px);
+    }
+
+    .modern-home .topbar {
+        display: grid;
+        gap: 12px;
+        justify-items: center;
+    }
+
+    .modern-home .icons-right {
+        position: static;
+        justify-self: center;
+    }
+
+    .article-shell {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: min(100% - 28px, 760px);
+        gap: 18px;
+        margin-top: 18px;
+        margin-bottom: 48px;
+    }
+
+    .modern-home .article-hero,
+    .toc-panel,
+    .modern-home .statement,
+    .modern-home #pilire,
+    .sleep-duration-card,
+    .modern-home #navyky,
+    .modern-home #souvisejici,
+    .modern-home .fact-quote--soft {
+        grid-column: 1 / -1 !important;
+    }
+
+    .modern-home .article-hero {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: clamp(30px, 6vw, 46px);
+        text-align: left;
+    }
+
+    .article-hero h1 {
+        max-width: 11ch;
+        font-size: clamp(40px, 8vw, 56px);
+    }
+
+    .article-hero p {
+        max-width: 100%;
+        font-size: 17px;
+        line-height: 1.65;
+    }
+
+    .hero__actions {
+        justify-content: flex-start;
+    }
+
+    .article-meta {
+        gap: 8px;
+    }
+
+    .wellness-illustration {
+        min-height: 260px;
+        overflow: hidden;
+    }
+
+    .orbit-one {
+        width: 220px;
+        height: 220px;
+    }
+
+    .orbit-two {
+        width: 150px;
+        height: 150px;
+    }
+
+    .wellness-card.sleep {
+        top: 18px;
+        left: max(18px, calc(50% - 140px));
+    }
+
+    .wellness-card.focus {
+        top: 88px;
+        right: max(18px, calc(50% - 150px));
+    }
+
+    .wellness-card.routine {
+        bottom: 20px;
+        left: max(54px, calc(50% - 96px));
+    }
+
+    .content-panel,
+    .sleep-duration-card,
+    .fact-quote {
+        padding: clamp(24px, 5vw, 34px);
+        border-radius: 20px;
+    }
+
+    .sleep-chart {
+        grid-template-columns: 1fr;
+    }
+
+    .sleep-chart__figure {
+        min-height: auto;
+        overflow-x: auto;
+    }
+
+    .sleep-chart svg {
+        min-width: 560px;
+    }
+
+    .habit-list,
+    .related-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 620px) {
+    .modern-home .site-header,
+    .article-shell {
+        width: min(100% - 22px, 560px);
+    }
+
+    .modern-home .navbar {
+        gap: 8px;
+        padding: 10px;
+        border-radius: 16px;
+    }
+
+    .modern-home .navbar a {
+        min-height: 38px;
+        padding: 0 10px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    .modern-home .article-hero {
+        padding: 26px 22px;
+    }
+
+    .article-hero h1 {
+        max-width: 10ch;
+        font-size: clamp(36px, 11vw, 46px);
+    }
+
+    .article-hero p {
+        margin-top: 16px;
+        font-size: 16px;
+    }
+
+    .modern-home .button-primary {
+        width: 100%;
+    }
+
+    .article-meta span {
+        min-height: 34px;
+        padding: 0 11px;
+        font-size: 13px;
+    }
+
+    .wellness-illustration {
+        min-height: 230px;
+    }
+
+    .wellness-card {
+        width: 88px;
+        min-height: 78px;
+        padding: 12px 10px;
+        border-radius: 16px;
+    }
+
+    .wellness-card i {
+        font-size: 21px;
+    }
+
+    .wellness-card.sleep {
+        left: 12px;
+    }
+
+    .wellness-card.focus {
+        right: 10px;
+    }
+
+    .wellness-card.routine {
+        left: calc(50% - 44px);
+    }
+
+    .content-panel,
+    .sleep-duration-card,
+    .fact-quote {
+        padding: 22px;
+    }
+
+    .content-panel h2,
+    .sleep-duration-card__header h2 {
+        font-size: clamp(24px, 8vw, 31px);
+    }
+
+    .toc-list li {
+        padding: 12px;
+    }
+
+    .toc-list a {
+        font-size: 15px;
+    }
+
+    .modern-home .statement p,
+    .fact-quote p {
+        font-size: clamp(22px, 7vw, 28px);
+    }
+
+    .chart-legend span {
+        width: 100%;
+        font-size: 13px;
+        line-height: 1.35;
+    }
+
+    .sleep-chart svg {
+        min-width: 520px;
+    }
+
+    .chart-callout {
+        width: 100%;
+        margin-top: 12px;
+    }
+
+    .sleep-age-chart {
+        gap: 18px;
+    }
+
+    .sleep-age-chart article {
+        grid-template-columns: 1fr !important;
+        gap: 8px;
+    }
+
+    .sleep-age-chart__track {
+        min-height: 42px;
+    }
+
+    .sleep-age-chart__track strong {
+        transform: translate(-50%, -138%) !important;
+    }
+
+    .habit-list article,
+    .related-grid a {
+        min-height: auto;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 390px) {
+    .modern-home .navbar {
+        justify-content: flex-start;
+        overflow-x: auto;
+    }
+
+    .article-hero h1 {
+        max-width: 9ch;
+    }
+
+    .sleep-chart svg {
+        min-width: 500px;
+    }
+}
