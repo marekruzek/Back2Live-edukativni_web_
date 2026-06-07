@@ -3618,3 +3618,13 @@ body:not(.modern-home) .about-philosophy blockquote {
         linear-gradient(135deg, #245f32, #2d7040) !important;
     box-shadow: 0 18px 42px rgba(37, 95, 50, 0.18) !important;
 }
+
+/* REMOVE TOPIC CARD CORNER DECORATION */
+
+body:not(.modern-home) .article-preview::before {
+    display: none !important;
+}
+
+body:not(.modern-home) .article-preview h2 {
+    max-width: none !important;
+}
