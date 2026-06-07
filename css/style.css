@@ -3334,7 +3334,7 @@ body:not(.modern-home) .contact-layout {
     display: grid;
     grid-template-columns: minmax(0, 1.32fr) minmax(280px, 0.68fr);
     gap: 18px;
-    align-items: stretch;
+    align-items: start;
 }
 
 body:not(.modern-home) .contact-panel,
