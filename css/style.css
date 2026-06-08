@@ -4000,8 +4000,7 @@ body:not(.modern-home) .catalog-category__header h2 {
     }
 
     .modern-home .navbar {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        display: flex;
         gap: 8px;
         width: 100%;
         padding: 10px;
