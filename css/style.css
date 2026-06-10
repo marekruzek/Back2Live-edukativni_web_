@@ -1990,7 +1990,10 @@ a.contact-option {
     grid-column: 8 / -1;
     display: grid;
     align-content: center;
+    width: 100%;
     min-height: 100%;
+    margin: 0;
+    padding: clamp(28px, 5vw, 44px);
     background: #fff8e9;
     text-align: center;
 }
