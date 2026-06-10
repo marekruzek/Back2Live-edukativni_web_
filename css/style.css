@@ -1994,7 +1994,11 @@ a.contact-option {
     min-height: 100%;
     margin: 0;
     padding: clamp(28px, 5vw, 44px);
+    border: 1px solid rgba(38, 94, 47, 0.12);
+    border-radius: 24px;
     background: #fff8e9;
+    box-shadow: 0 18px 48px rgba(37, 95, 50, 0.1);
+    backdrop-filter: blur(12px);
     text-align: center;
 }
 
