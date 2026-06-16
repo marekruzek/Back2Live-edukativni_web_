@@ -282,7 +282,6 @@ main {
     padding: 74px 0 88px;
     border-radius: 24px;
     text-align: center;
-    animation: fadeInUp 0.8s ease 0.12s both;
 }
 
 .statement p {
@@ -734,6 +733,18 @@ main {
     from {
         opacity: 0;
         transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(34px);
     }
 
     to {
@@ -1775,7 +1786,7 @@ a.contact-option {
     grid-template-columns: repeat(12, minmax(0, 1fr));
     gap: 22px;
     width: min(1180px, calc(100% - 40px));
-    margin: 24px auto 80px;
+    margin: 24px auto 28px;
     overflow: visible;
 }
 
@@ -1796,6 +1807,10 @@ a.contact-option {
         linear-gradient(135deg, rgba(255, 255, 250, 0.92), rgba(235, 247, 229, 0.82)),
         radial-gradient(circle at 82% 18%, rgba(112, 184, 161, 0.22), transparent 32%);
     box-shadow: 0 24px 70px rgba(37, 95, 50, 0.13);
+}
+
+.modern-home .article-hero > * {
+    animation: slideInFromBottom 0.75s ease both;
 }
 
 .article-hero h1 {
@@ -1853,7 +1868,7 @@ a.contact-option {
     position: relative;
     display: grid;
     place-items: center;
-    min-height: 300px;
+    min-height: 390px;
     overflow: visible;
 }
 
@@ -1869,13 +1884,13 @@ a.contact-option {
 }
 
 .orbit-one {
-    width: 250px;
-    height: 250px;
+    width: 330px;
+    height: 330px;
 }
 
 .orbit-two {
-    width: 170px;
-    height: 170px;
+    width: 230px;
+    height: 230px;
     transform: rotate(26deg);
     border-style: dashed;
 }
@@ -1883,13 +1898,13 @@ a.contact-option {
 .wellness-card {
     position: absolute;
     display: grid;
-    gap: 8px;
+    gap: 10px;
     place-items: center;
-    width: 112px;
-    min-height: 96px;
-    padding: 18px 14px;
+    width: 138px;
+    min-height: 116px;
+    padding: 14px 12px;
     color: #203329;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 800;
     border: 1px solid rgba(38, 94, 47, 0.12);
     border-radius: 18px;
@@ -1899,31 +1914,35 @@ a.contact-option {
 
 .wellness-card i {
     color: #2d7040;
-    font-size: 24px;
+    font-size: 36px;
 }
 
 .wellness-card span {
     position: static;
     display: inline;
     color: inherit;
+    font-size: 16px;
+    line-height: 1.1;
+    letter-spacing: 0;
     background: none;
     box-shadow: none;
     border-radius: 0;
 }
 
 .wellness-card.sleep {
-    top: 20px;
-    left: 24px;
+    top: 18px;
+    left: 8px;
 }
 
 .wellness-card.focus {
-    top: 96px;
-    right: 0;
+    top: 118px;
+    right: -10px;
 }
 
 .wellness-card.routine {
-    bottom: 24px;
-    left: 76px;
+    bottom: 22px;
+    left: 92px;
+    padding: 10px 10px;
 }
 
 .content-panel,
@@ -2464,6 +2483,28 @@ a.contact-option {
     grid-column: 1 / -1;
 }
 
+.modern-home .site-footer {
+    grid-column: 1 / -1;
+    display: grid;
+    gap: 8px;
+    justify-items: center;
+    padding: 18px 0 0;
+    text-align: center;
+}
+
+.modern-home .site-footer strong {
+    color: #17231c;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.modern-home .site-footer p {
+    margin: 0;
+    color: #526157;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
 .modern-home #souvisejici {
     grid-column: 1 / -1;
     background:
@@ -2534,9 +2575,14 @@ a.contact-option {
 }
 
 .related-grid a {
-    min-height: 170px;
-    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 130px;
+    padding: 12px;
     color: #17231c;
+    text-align: left;
     text-decoration: none;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -2582,7 +2628,7 @@ a.contact-option {
 
 @media (min-width: 1024px) {
     .modern-home .article-hero {
-        grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+        grid-template-columns: minmax(0, 1.12fr) minmax(410px, 0.88fr);
     }
 }
 
@@ -3490,6 +3536,48 @@ body:not(.modern-home) .catalog-category__header h2 {
     fill: #245f32;
 }
 
+.sleep-chart--performance .performance-bar {
+    transform-box: fill-box;
+    transform-origin: center bottom;
+    transform: scaleY(0);
+    transition: transform 0.85s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.sleep-chart--performance .performance-bar:nth-of-type(2) {
+    transition-delay: 0.12s;
+}
+
+.sleep-chart--performance .performance-bar:nth-of-type(3) {
+    transition-delay: 0.24s;
+}
+
+.sleep-chart--performance .chart-notes {
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.45s ease 0.75s, transform 0.45s ease 0.75s;
+}
+
+.sleep-chart--performance.is-animated .performance-bar {
+    transform: scaleY(1);
+}
+
+.sleep-chart--performance.is-animated .chart-notes {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sleep-chart--performance .performance-bar,
+    .sleep-chart--performance .chart-notes {
+        transform: none;
+        transition: none;
+    }
+
+    .sleep-chart--performance .chart-notes {
+        opacity: 1;
+    }
+}
+
 .sleep-duration-card {
     border-color: rgba(45, 112, 64, 0.16);
     background:
@@ -3713,6 +3801,95 @@ body:not(.modern-home) .article-preview h2 {
     box-shadow: none !important;
 }
 
+.sleep-duration-card .sleep-age-chart article {
+    opacity: 0;
+    transform: translateX(-22px);
+    transition: opacity 0.48s ease, transform 0.48s ease;
+    transition-delay: var(--sleep-row-delay, 0s);
+}
+
+.sleep-duration-card .sleep-age-chart article:nth-child(1) {
+    --sleep-row-delay: 0.04s;
+}
+
+.sleep-duration-card .sleep-age-chart article:nth-child(2) {
+    --sleep-row-delay: 0.1s;
+}
+
+.sleep-duration-card .sleep-age-chart article:nth-child(3) {
+    --sleep-row-delay: 0.16s;
+}
+
+.sleep-duration-card .sleep-age-chart article:nth-child(4) {
+    --sleep-row-delay: 0.22s;
+}
+
+.sleep-duration-card .sleep-age-chart article:nth-child(5) {
+    --sleep-row-delay: 0.28s;
+}
+
+.sleep-duration-card .sleep-age-chart article:nth-child(6) {
+    --sleep-row-delay: 0.34s;
+}
+
+.sleep-duration-card .sleep-age-chart article:nth-child(7) {
+    --sleep-row-delay: 0.4s;
+}
+
+.sleep-duration-card .sleep-age-chart article:nth-child(8) {
+    --sleep-row-delay: 0.46s;
+}
+
+.sleep-duration-card .sleep-age-chart article:nth-child(9) {
+    --sleep-row-delay: 0.52s;
+}
+
+.sleep-duration-card .sleep-age-chart__track::before {
+    transform: translateY(-50%) scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.72s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transition-delay: var(--sleep-row-delay, 0s);
+}
+
+.sleep-duration-card .sleep-age-chart__track strong {
+    opacity: 0;
+    transition: opacity 0.36s ease, transform 0.48s ease;
+    transition-delay: calc(var(--sleep-row-delay, 0s) + 0.18s);
+    transform: translate(calc(-50% + 4px), -50%);
+}
+
+.sleep-duration-card.is-animated .sleep-age-chart article {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.sleep-duration-card.is-animated .sleep-age-chart__track::before {
+    transform: translateY(-50%) scaleX(1);
+}
+
+.sleep-duration-card.is-animated .sleep-age-chart__track strong {
+    opacity: 1;
+    transform: translate(calc(-50% + 28px), -50%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sleep-duration-card .sleep-age-chart article,
+    .sleep-duration-card .sleep-age-chart__track::before,
+    .sleep-duration-card .sleep-age-chart__track strong {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .sleep-duration-card .sleep-age-chart__track::before {
+        transform: translateY(-50%);
+    }
+
+    .sleep-duration-card .sleep-age-chart__track strong {
+        transform: translate(calc(-50% + 28px), -50%);
+    }
+}
+
 /* PRODUCT SHOP CARDS */
 
 body:not(.modern-home) .catalog-product {
@@ -3732,6 +3909,7 @@ body:not(.modern-home) .catalog-product::before {
 }
 
 body:not(.modern-home) .catalog-product h3 {
+    padding-right: 132px;
     color: #17231c;
     font-size: 22px;
     font-weight: 900;
@@ -3766,8 +3944,11 @@ body:not(.modern-home) .catalog-product__emoji {
 }
 
 body:not(.modern-home) .catalog-product strong {
+    position: absolute;
+    top: 22px;
+    right: 22px;
     width: fit-content;
-    margin-top: 18px;
+    margin-top: 0;
     color: #17231c;
     border-color: rgba(82, 97, 87, 0.16);
     background: rgba(216, 230, 212, 0.58);
@@ -3848,6 +4029,7 @@ body:not(.modern-home) .catalog-category__header h2 {
     }
 
     body:not(.modern-home) .catalog-product h3 {
+        padding-right: 120px;
         font-size: 20px;
     }
 
@@ -3866,7 +4048,9 @@ body:not(.modern-home) .catalog-category__header h2 {
     }
 
     body:not(.modern-home) .catalog-product strong {
-        margin-top: 12px;
+        top: 18px;
+        right: 18px;
+        margin-top: 0;
         padding: 6px 9px;
         font-size: 13px;
     }

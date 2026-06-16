@@ -1,6 +1,8 @@
 const progressBar = document.querySelector("#scrollProgress");
 const backToTopButton = document.querySelector(".back-to-top");
 const readingTime = document.querySelector("#readingTime");
+const performanceChart = document.querySelector(".sleep-chart--performance");
+const sleepDurationCard = document.querySelector(".sleep-duration-card");
 
 function updateReadingTime() {
     if (!readingTime) return;
@@ -29,6 +31,30 @@ function updateScrollUi() {
 
 updateReadingTime();
 updateScrollUi();
+
+function animateOnFirstView(element, className, threshold = 0.35) {
+    if (!element) return;
+
+    if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries, activeObserver) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+
+                entry.target.classList.add(className);
+                activeObserver.unobserve(entry.target);
+            });
+        }, {
+            threshold
+        });
+
+        observer.observe(element);
+    } else {
+        element.classList.add(className);
+    }
+}
+
+animateOnFirstView(performanceChart, "is-animated");
+animateOnFirstView(sleepDurationCard, "is-animated", 0.28);
 
 window.addEventListener("scroll", updateScrollUi, { passive: true });
 window.addEventListener("resize", updateScrollUi);
