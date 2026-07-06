@@ -3223,9 +3223,13 @@ body:not(.modern-home) .about-philosophy blockquote {
 /* VISUAL RESTORE */
 
 body:not(.modern-home) .page {
+    position: relative;
     width: min(1120px, calc(100% - 40px));
     margin: 24px auto 0;
+    min-height: clamp(230px, 24vw, 292px);
     padding: clamp(28px, 5vw, 46px);
+    padding-right: clamp(210px, 27vw, 330px);
+    overflow: hidden;
     text-align: left;
     border: 1px solid rgba(38, 94, 47, 0.12);
     border-radius: 24px;
@@ -3233,6 +3237,90 @@ body:not(.modern-home) .page {
         linear-gradient(135deg, rgba(255, 255, 250, 0.92), rgba(235, 247, 229, 0.82)),
         radial-gradient(circle at 86% 18%, rgba(112, 184, 161, 0.22), transparent 34%);
     box-shadow: 0 20px 56px rgba(37, 95, 50, 0.12);
+}
+
+body:not(.modern-home) .topic-icon {
+    position: absolute;
+    top: 50%;
+    right: clamp(28px, 5vw, 58px);
+    z-index: 0;
+    display: grid;
+    place-items: center;
+    width: clamp(170px, 20vw, 250px);
+    aspect-ratio: 1;
+    margin: 0;
+    color: #245f32;
+    opacity: 0.22;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+body:not(.modern-home) .topic-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+body:not(.modern-home) .topic-icon__bg {
+    fill: rgba(91, 170, 35, 0.18);
+}
+
+body:not(.modern-home) .topic-icon__fill {
+    fill: #245f32;
+}
+
+body:not(.modern-home) .topic-icon__leaf {
+    fill: #5baa23;
+}
+
+body:not(.modern-home) .topic-icon__leaf--light {
+    fill: #8fd15a;
+}
+
+body:not(.modern-home) .topic-icon__line {
+    fill: none;
+    stroke: #5baa23;
+    stroke-width: 5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+body:not(.modern-home) .topic-icon__line--small {
+    stroke-width: 4;
+}
+
+body:not(.modern-home) .topic-icon__brain {
+    fill: rgba(36, 95, 50, 0.58);
+    stroke: #245f32;
+    stroke-width: 4.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+body:not(.modern-home) .topic-icon__brain-line {
+    fill: none;
+    stroke: #245f32;
+    stroke-width: 4.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+body:not(.modern-home) .page-kicker,
+body:not(.modern-home) .page-intro {
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 760px) {
+    body:not(.modern-home) .page {
+        min-height: 0;
+        padding-right: clamp(24px, 5vw, 32px);
+    }
+
+    body:not(.modern-home) .topic-icon {
+        right: -18px;
+        width: clamp(150px, 42vw, 190px);
+        opacity: 0.13;
+    }
 }
 
 body:not(.modern-home) .page-kicker,
