@@ -4618,3 +4618,11 @@ body:not(.modern-home) .catalog-category__header h2 {
         border-radius: 0;
     }
 }
+/* Paint iOS landscape safe-area edges */
+@supports (padding: max(0px)) {
+    html,
+    body,
+    .modern-home {
+        background-color: #f6f8f1;
+    }
+}
