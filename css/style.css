@@ -2647,6 +2647,10 @@ a.contact-option {
         margin-top: 22px;
     }
 
+    .modern-home .article-shell > * + * {
+        margin-top: 0;
+    }
+
     .toc-panel,
     .info-grid,
     .sleep-duration-grid,
@@ -2660,9 +2664,9 @@ a.contact-option {
         grid-template-columns: 1fr;
     }
 
-    .sleep-chart {
+    .modern-home .sleep-chart {
         grid-template-columns: 1fr;
-        gap: 14px;
+        gap: var(--home-card-gap);
         padding: 18px;
     }
 
