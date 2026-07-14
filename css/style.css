@@ -2537,11 +2537,14 @@ a.contact-option {
     overflow-wrap: anywhere;
 }
 
-.habit-list i {
+.habit-list i,
+.habit-list .svg-inline--fa {
     display: grid;
     place-items: center;
     width: 46px;
     height: 46px;
+    box-sizing: border-box;
+    padding: 12px;
     color: #2d7040;
     font-size: 22px;
     border-radius: 16px;
