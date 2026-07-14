@@ -1721,6 +1721,8 @@ a.contact-option {
 /* MODERN ARTICLE HOMEPAGE */
 
 .modern-home {
+    --home-card-gap: 18px;
+    --home-page-gutter: 20px;
     font-family: "Inter", Arial, Helvetica, sans-serif;
     text-align: left;
     color: #18251d;
@@ -1750,7 +1752,7 @@ a.contact-option {
 }
 
 .site-header {
-    width: min(1120px, calc(100% - 40px));
+    width: min(1120px, calc(100% - (var(--home-page-gutter) * 2)));
     margin: 36px auto 0;
 }
 
@@ -1784,8 +1786,8 @@ a.contact-option {
 .article-shell {
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
-    gap: 22px;
-    width: min(1180px, calc(100% - 40px));
+    gap: var(--home-card-gap);
+    width: min(1180px, calc(100% - (var(--home-page-gutter) * 2)));
     margin: 24px auto 28px;
     overflow: visible;
 }
@@ -2032,7 +2034,7 @@ a.contact-option {
     grid-column: 1 / -1;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
+    gap: var(--home-card-gap);
     margin-top: 0;
 }
 
@@ -2082,9 +2084,9 @@ a.contact-option {
 .modern-home .problem-grid,
 .modern-home .product-grid {
     width: 100%;
-    margin-top: 28px;
+    margin-top: var(--home-card-gap);
     padding: 0;
-    gap: 16px;
+    gap: var(--home-card-gap);
 }
 
 .modern-home #pilire {
@@ -2097,9 +2099,9 @@ a.contact-option {
     position: relative;
     display: grid;
     grid-template-columns: minmax(240px, 0.72fr) minmax(0, 1.28fr);
-    gap: 28px;
+    gap: var(--home-card-gap);
     align-items: center;
-    margin-top: 34px;
+    margin-top: var(--home-card-gap);
     padding: 24px;
     border: 1px solid rgba(38, 94, 47, 0.1);
     border-radius: 24px;
@@ -2307,7 +2309,7 @@ a.contact-option {
 .sleep-duration-card {
     grid-column: 1 / span 5;
     display: grid;
-    gap: 22px;
+    gap: var(--home-card-gap);
     align-content: start;
     padding: clamp(28px, 5vw, 44px);
     border: 1px solid rgba(24, 24, 24, 0.12);
@@ -2334,7 +2336,7 @@ a.contact-option {
 .sleep-duration-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
+    gap: var(--home-card-gap);
 }
 
 .sleep-duration-grid article {
@@ -2521,10 +2523,10 @@ a.contact-option {
 .related-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 16px;
+    gap: var(--home-card-gap);
     width: 100%;
     min-width: 0;
-    margin-top: 28px;
+    margin-top: var(--home-card-gap);
 }
 
 .habit-list article {
@@ -4218,7 +4220,8 @@ body:not(.modern-home) .catalog-category__header h2 {
 
 @media (max-width: 1023px) {
     .modern-home .site-header {
-        width: min(100% - 28px, 760px);
+        width: calc(100% - (var(--home-page-gutter) * 2));
+        max-width: none;
         margin-top: 22px;
     }
 
@@ -4243,8 +4246,9 @@ body:not(.modern-home) .catalog-category__header h2 {
     .article-shell {
         display: grid;
         grid-template-columns: 1fr;
-        width: min(100% - 28px, 760px);
-        gap: 18px;
+        width: calc(100% - (var(--home-page-gutter) * 2));
+        max-width: none;
+        gap: var(--home-card-gap);
         margin-top: 18px;
         margin-bottom: 48px;
     }
@@ -4262,7 +4266,7 @@ body:not(.modern-home) .catalog-category__header h2 {
 
     .modern-home .article-hero {
         grid-template-columns: 1fr;
-        gap: 28px;
+        gap: var(--home-card-gap);
         padding: clamp(30px, 6vw, 46px);
         text-align: left;
     }
@@ -4343,9 +4347,13 @@ body:not(.modern-home) .catalog-category__header h2 {
 }
 
 @media (max-width: 620px) {
+    .modern-home {
+        --home-page-gutter: 8px;
+    }
+
     .modern-home .site-header,
     .article-shell {
-        width: min(100% - 22px, 560px);
+        width: calc(100% - (var(--home-page-gutter) * 2));
     }
 
     .modern-home .sleep-duration-card {
@@ -4503,16 +4511,24 @@ body:not(.modern-home) .catalog-category__header h2 {
 }
 
 @media (max-width: 1023px) and (orientation: landscape) {
+    .modern-home {
+        --home-page-gutter: 6px;
+    }
+
     .modern-home .site-header,
     .article-shell {
-        width: calc(100% - 16px);
+        width: calc(100% - (var(--home-page-gutter) * 2));
     }
 }
 
 @media (max-width: 1023px) and (max-height: 620px) {
+    .modern-home {
+        --home-page-gutter: 6px;
+    }
+
     .modern-home .site-header,
     .article-shell {
-        width: calc(100% - 12px);
+        width: calc(100% - (var(--home-page-gutter) * 2));
         max-width: none;
     }
 }
