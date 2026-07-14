@@ -4594,3 +4594,27 @@ body:not(.modern-home) .catalog-category__header h2 {
         margin-right: 0;
     }
 }
+/* Remove visual side gutters from mobile/tablet landscape panels */
+@media (max-width: 1023px) and (orientation: landscape) {
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    .modern-home .article-hero,
+    .modern-home .toc-panel,
+    .modern-home .statement,
+    .modern-home #pilire,
+    .modern-home .sleep-duration-card,
+    .modern-home #navyky,
+    .modern-home #souvisejici,
+    .modern-home .fact-quote--soft {
+        width: 100vw;
+        max-width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        border-left: 0;
+        border-right: 0;
+        border-radius: 0;
+    }
+}
