@@ -2473,6 +2473,7 @@ a.contact-option {
 
 .modern-home #navyky .habit-list article {
     min-height: auto;
+    padding: 24px 24px 18px;
 }
 
 .modern-home #produkty {
@@ -4511,6 +4512,7 @@ body:not(.modern-home) .catalog-category__header h2 {
 
     .modern-home #navyky .habit-list article {
         min-height: auto;
+        padding: 20px 20px 14px;
     }
 }
 
