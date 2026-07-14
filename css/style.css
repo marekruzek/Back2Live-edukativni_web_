@@ -2678,6 +2678,10 @@ a.contact-option {
         grid-template-columns: 1fr;
     }
 
+    .modern-home #navyky .habit-list article {
+        min-height: auto;
+    }
+
     .modern-home .problem-card:first-child,
     .modern-home .problem-card:last-child,
     .modern-home .problem-card {
