@@ -4509,6 +4509,14 @@ body:not(.modern-home) .catalog-category__header h2 {
     }
 }
 
+@media (max-width: 1023px) and (max-height: 620px) {
+    .modern-home .site-header,
+    .article-shell {
+        width: calc(100% - 12px);
+        max-width: none;
+    }
+}
+
 @media (max-width: 390px) {
     .modern-home .navbar {
         grid-template-columns: 1fr;
