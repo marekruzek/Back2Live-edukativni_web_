@@ -2472,7 +2472,7 @@ a.contact-option {
 }
 
 .modern-home #navyky .habit-list article {
-    min-height: 150px;
+    min-height: auto;
 }
 
 .modern-home #produkty {
