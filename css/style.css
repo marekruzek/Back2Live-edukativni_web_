@@ -2522,12 +2522,16 @@ a.contact-option {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 16px;
+    width: 100%;
+    min-width: 0;
     margin-top: 28px;
 }
 
 .habit-list article {
+    min-width: 0;
     min-height: 230px;
     padding: 26px;
+    overflow-wrap: anywhere;
 }
 
 .habit-list i {
@@ -4487,6 +4491,17 @@ body:not(.modern-home) .catalog-category__header h2 {
     .related-grid a {
         min-height: auto;
         padding: 20px;
+    }
+
+    .modern-home #navyky .habit-list article {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 1023px) and (orientation: landscape) {
+    .modern-home .site-header,
+    .article-shell {
+        width: calc(100% - 16px);
     }
 }
 
