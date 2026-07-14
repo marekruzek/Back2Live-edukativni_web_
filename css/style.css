@@ -2,6 +2,11 @@
 
 /* RESET */
 
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -4553,5 +4558,39 @@ body:not(.modern-home) .catalog-category__header h2 {
 
     .sleep-chart svg {
         min-width: 0;
+    }
+}
+/* Stabilize mobile habit cards after iOS orientation changes */
+@media (max-width: 620px) and (orientation: portrait) {
+    .modern-home #navyky .habit-list {
+        gap: 14px;
+        margin-top: 16px;
+    }
+
+    .modern-home #navyky .habit-list article {
+        min-height: auto;
+        padding: 20px 20px 14px;
+    }
+
+    .modern-home #navyky .habit-list article p {
+        margin-bottom: 0;
+    }
+}
+
+/* Full-width mobile/tablet landscape layout after rotation */
+@media (max-width: 1023px) and (orientation: landscape) {
+    .modern-home {
+        --home-page-gutter: 0px;
+    }
+
+    .modern-home .site-header,
+    .modern-home .article-shell {
+        width: 100%;
+        max-width: none;
+    }
+
+    .modern-home .article-shell {
+        margin-left: 0;
+        margin-right: 0;
     }
 }
