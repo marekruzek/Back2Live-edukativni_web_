@@ -2024,9 +2024,10 @@ a.contact-option {
 }
 
 .toc-list {
+    counter-reset: toc-step;
     display: grid;
     gap: 10px;
-    list-style-position: inside;
+    list-style: none;
 }
 
 .toc-list a {
@@ -2034,15 +2035,36 @@ a.contact-option {
     color: #203329;
     font-size: 17px;
     font-weight: 800;
+    line-height: 1.35;
     text-decoration: none;
 }
 
 .toc-list li {
+    counter-increment: toc-step;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 12px;
     padding: 14px 16px;
     color: #2d7040;
     border-radius: 14px;
     background: rgba(45, 112, 64, 0.08);
     transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.toc-list li::before {
+    content: counter(toc-step, decimal-leading-zero);
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    flex: 0 0 auto;
+    color: #245f32;
+    font-size: 13px;
+    font-weight: 900;
+    line-height: 1;
+    border-radius: 12px;
+    background: rgba(45, 112, 64, 0.12);
 }
 
 .toc-list li:hover,
@@ -3569,6 +3591,16 @@ body:not(.modern-home) .contact-page {
     margin: 18px auto 34px;
 }
 
+body:not(.modern-home):has(.contact-page) .contact-intro {
+    width: min(900px, 100%);
+}
+
+@media (min-width: 1024px) {
+    body:not(.modern-home):has(.contact-page) .contact-intro br {
+        display: none;
+    }
+}
+
 body:not(.modern-home) .contact-options {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
@@ -4675,12 +4707,20 @@ body:not(.modern-home):has(.contact-page) .page {
 
 /* ABOUT PAGE CONTENT LAYOUT */
 body:not(.modern-home) .about-page {
+    display: grid;
+    gap: 18px;
     width: min(1120px, calc(100% - 40px));
-    margin: 0 auto 70px;
+    margin: 18px auto 70px;
 }
 
-body:not(.modern-home) .about-page > * + * {
-    margin-top: 16px;
+body:not(.modern-home) .about-page > * {
+    margin: 0 !important;
+}
+
+@media (max-width: 860px) {
+    body:not(.modern-home) .about-page {
+        width: min(100% - 24px, 1120px);
+    }
 }
 
 body:not(.modern-home) .about-page .page,
@@ -4710,9 +4750,15 @@ body:not(.modern-home) .about-philosophy__copy h2 {
 }
 
 body:not(.modern-home) .about-page .page-intro {
-    max-width: 760px;
+    max-width: 900px;
     margin-top: 4px;
     font-size: clamp(17px, 1.8vw, 20px);
+}
+
+@media (max-width: 1023px) {
+    body:not(.modern-home) .about-page .about-intro-break {
+        display: none;
+    }
 }
 
 body:not(.modern-home) .about-hero__mark {
@@ -4737,6 +4783,7 @@ body:not(.modern-home) .about-section--story .about-copy {
     gap: 12px;
     width: min(760px, 100%);
     max-width: none;
+    margin: 0;
     padding: clamp(22px, 3.5vw, 34px);
     border: 1px solid rgba(38, 94, 47, 0.14);
     border-radius: 22px;
@@ -4891,10 +4938,6 @@ body:not(.modern-home) .about-page .about-philosophy blockquote {
     body:not(.modern-home) .about-page {
         width: min(100% - 24px, 1120px);
         margin-bottom: 48px;
-    }
-
-    body:not(.modern-home) .about-page > * + * {
-        margin-top: 12px;
     }
 
     body:not(.modern-home) .about-page .about-section--story {
