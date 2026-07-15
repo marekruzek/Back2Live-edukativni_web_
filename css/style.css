@@ -23,6 +23,12 @@ body {
         linear-gradient(135deg, rgb(238, 249, 231), rgb(255, 255, 255) 55%, rgb(230, 244, 220));
 }
 
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid rgba(45, 112, 64, 0.42);
+    outline-offset: 4px;
+}
+
 /* TEXT */
 
 h1 {
@@ -101,6 +107,11 @@ p {
     transform: translateY(-1px);
 }
 
+.dropdown:focus-within > a {
+    background: rgba(91, 170, 35, 0.15);
+    color: rgb(59, 115, 23);
+}
+
 /* dropdown menu box */
 .dropdown-menu {
     z-index: 30;
@@ -119,6 +130,10 @@ p {
 
 /* otevření dropdownu */
 .dropdown:hover .dropdown-menu {
+    display: flex;
+}
+
+.dropdown:focus-within .dropdown-menu {
     display: flex;
 }
 
@@ -857,6 +872,7 @@ main {
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.72);
     box-shadow: 0 12px 28px rgba(48, 92, 18, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .article-preview h2 {
@@ -892,7 +908,9 @@ main {
 }
 
 .article-preview a:hover,
-.article-back:hover {
+.article-preview a:focus-visible,
+.article-back:hover,
+.article-back:focus-visible {
     color: white;
     background: rgb(91, 170, 35);
     transform: translateY(-1px);
@@ -1498,6 +1516,7 @@ p {
 
 .navbar > a:hover,
 .dropdown:hover > a,
+.dropdown:focus-within > a,
 .dropdown-menu a:hover,
 .navbar a.is-current {
     color: white;
@@ -1505,11 +1524,27 @@ p {
 }
 
 .dropdown-menu {
-    min-width: 150px;
+    width: min(260px, calc(100vw - 32px));
+    min-width: 220px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    padding: 10px;
     border: 1px solid var(--line);
     border-radius: 12px;
     background: rgba(255, 255, 250, 0.96);
     box-shadow: var(--shadow);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: grid;
+}
+
+.dropdown:focus-within .dropdown-menu {
+    display: grid;
+}
+
+.dropdown-menu a {
+    text-align: center;
 }
 
 .hero {
@@ -1995,6 +2030,7 @@ a.contact-option {
 }
 
 .toc-list a {
+    display: block;
     color: #203329;
     font-size: 17px;
     font-weight: 800;
@@ -2006,9 +2042,17 @@ a.contact-option {
     color: #2d7040;
     border-radius: 14px;
     background: rgba(45, 112, 64, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
-.toc-list a:hover {
+.toc-list li:hover,
+.toc-list li:focus-within {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(37, 95, 50, 0.12);
+}
+
+.toc-list a:hover,
+.toc-list a:focus-visible {
     color: #2d7040;
 }
 
@@ -2598,14 +2642,15 @@ a.contact-option {
     justify-content: center;
     align-items: flex-start;
     min-height: 130px;
-    padding: 12px;
+    padding: 18px;
     color: #17231c;
     text-align: left;
     text-decoration: none;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-.related-grid a:hover {
+.related-grid a:hover,
+.related-grid a:focus-visible {
     transform: translateY(-4px);
     box-shadow: 0 22px 52px rgba(37, 95, 50, 0.14);
 }
@@ -2619,8 +2664,8 @@ a.contact-option {
 
 .back-to-top {
     position: fixed;
-    right: 20px;
-    bottom: 20px;
+    right: max(16px, env(safe-area-inset-right));
+    bottom: max(16px, env(safe-area-inset-bottom));
     z-index: 90;
     display: grid;
     place-items: center;
@@ -2639,6 +2684,12 @@ a.contact-option {
 }
 
 .back-to-top.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.back-to-top:focus-visible {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
@@ -2819,6 +2870,12 @@ body:not(.modern-home) .page-intro--compact {
     backdrop-filter: none;
 }
 
+body:not(.modern-home):has(.product-catalog) .page,
+body:not(.modern-home):has(.about-section) .page,
+body:not(.modern-home):has(.contact-page) .page {
+    padding: clamp(26px, 4.5vw, 42px);
+}
+
 body:not(.modern-home) .topic-articles {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2851,7 +2908,8 @@ body:not(.modern-home) .article-preview::before {
         linear-gradient(145deg, rgba(45, 112, 64, 0.14), rgba(112, 184, 161, 0.1));
 }
 
-body:not(.modern-home) .article-preview:hover {
+body:not(.modern-home) .article-preview:hover,
+body:not(.modern-home) .article-preview:focus-within {
     transform: translateY(-5px);
     border-color: rgba(38, 94, 47, 0.28);
     box-shadow: 0 24px 60px rgba(37, 95, 50, 0.14);
@@ -2885,7 +2943,9 @@ body:not(.modern-home) .article-back {
 }
 
 body:not(.modern-home) .article-preview a:hover,
-body:not(.modern-home) .article-back:hover {
+body:not(.modern-home) .article-preview a:focus-visible,
+body:not(.modern-home) .article-back:hover,
+body:not(.modern-home) .article-back:focus-visible {
     color: #ffffff;
     background: #245f32;
 }
@@ -2980,9 +3040,15 @@ body:not(.modern-home) .article-page h2 {
 
 body:not(.modern-home) .article-page p,
 body:not(.modern-home) .article-page li {
+    max-width: 68ch;
     color: #526157;
     font-size: 18px;
     line-height: 1.78;
+}
+
+body:not(.modern-home) .article-page section > p,
+body:not(.modern-home) .article-page section > ul {
+    max-width: 68ch;
 }
 
 body:not(.modern-home) .article-page ul {
@@ -3155,6 +3221,17 @@ body:not(.modern-home) .about-philosophy {
 }
 
 @media (max-width: 560px) {
+    body:not(.modern-home):has(.product-catalog) .page,
+    body:not(.modern-home):has(.about-section) .page,
+    body:not(.modern-home):has(.contact-page) .page,
+    body:not(.modern-home):has(.product-catalog) .catalog-category,
+    body:not(.modern-home):has(.about-section) .about-section,
+    body:not(.modern-home):has(.about-section) .about-philosophy,
+    body:not(.modern-home):has(.contact-page) .contact-panel,
+    body:not(.modern-home):has(.contact-page) .contact-aside {
+        padding: 20px;
+    }
+
     body:not(.modern-home) .page,
     body:not(.modern-home) .article-header,
     body:not(.modern-home) .article-page section,
@@ -3169,6 +3246,13 @@ body:not(.modern-home) .about-philosophy {
 
     body:not(.modern-home) .article-preview::before {
         opacity: 0.28;
+    }
+
+    body:not(.modern-home) .article-header p,
+    body:not(.modern-home) .article-page p,
+    body:not(.modern-home) .article-page li {
+        font-size: 16px;
+        line-height: 1.72;
     }
 }
 
@@ -3387,7 +3471,7 @@ body:not(.modern-home) .product-catalog {
 
 body:not(.modern-home) .about-section {
     margin: 18px auto 0;
-    padding: clamp(28px, 4.5vw, 42px);
+    padding: clamp(22px, 3.5vw, 34px);
     text-align: left;
     border: 1px solid rgba(38, 94, 47, 0.12);
     border-radius: 22px;
@@ -3428,7 +3512,7 @@ body:not(.modern-home) .about-philosophy {
     gap: 22px;
     align-items: start;
     margin: 18px auto 34px;
-    padding: clamp(28px, 4.5vw, 42px);
+    padding: clamp(22px, 3.5vw, 34px);
     text-align: left;
     border: 1px solid rgba(38, 94, 47, 0.14);
     border-radius: 22px;
@@ -3461,8 +3545,8 @@ body:not(.modern-home) .about-values {
 body:not(.modern-home) .about-values span {
     display: grid;
     place-items: center;
-    min-height: 96px;
-    padding: 14px;
+    min-height: 78px;
+    padding: 12px;
     color: #245f32;
     text-align: center;
     border: 1px solid rgba(45, 112, 64, 0.16);
@@ -3474,7 +3558,7 @@ body:not(.modern-home) .about-values span {
 body:not(.modern-home) .about-philosophy blockquote {
     grid-column: 1 / -1;
     margin-top: 2px;
-    padding: 22px 26px;
+    padding: 18px 22px;
     color: #ffffff;
     border-radius: 20px;
     background: #245f32;
@@ -3492,8 +3576,8 @@ body:not(.modern-home) .contact-options {
 }
 
 body:not(.modern-home) .contact-option {
-    min-height: 96px;
-    padding: 22px;
+    min-height: 82px;
+    padding: 18px;
     border-radius: 18px;
     background: rgba(255, 255, 255, 0.82);
 }
@@ -3518,13 +3602,13 @@ body:not(.modern-home) .contact-aside {
 }
 
 body:not(.modern-home) .contact-panel {
-    padding: 24px;
+    padding: 20px;
 }
 
 body:not(.modern-home) .contact-aside {
     display: grid;
     align-content: start;
-    padding: 24px;
+    padding: 20px;
 }
 
 body:not(.modern-home) .contact-form {
@@ -3552,7 +3636,7 @@ body:not(.modern-home) .catalog-category {
     gap: 20px;
     align-items: stretch;
     margin-top: 22px;
-    padding: 28px;
+    padding: 22px;
     border: 1px solid rgba(38, 94, 47, 0.12);
     border-radius: 24px;
     background:
@@ -3775,8 +3859,8 @@ body:not(.modern-home) .catalog-category__header h2 {
 
     body:not(.modern-home):has(.contact-page) .page,
     body:not(.modern-home):has(.about-section) .page {
-        padding-top: 30px;
-        padding-bottom: 30px;
+        padding-top: 24px;
+        padding-bottom: 24px;
     }
 }
 
@@ -4011,7 +4095,7 @@ body:not(.modern-home) .catalog-product {
     display: grid;
     align-content: start;
     min-height: 214px;
-    padding: 22px;
+    padding: 18px;
     border-color: rgba(82, 97, 87, 0.16) !important;
     background:
         linear-gradient(180deg, #ffffff, #f8faf6) !important;
@@ -4023,7 +4107,7 @@ body:not(.modern-home) .catalog-product::before {
 }
 
 body:not(.modern-home) .catalog-product h3 {
-    padding-right: 132px;
+    padding-right: 124px;
     color: #17231c;
     font-size: 22px;
     font-weight: 900;
@@ -4035,8 +4119,8 @@ body:not(.modern-home) .catalog-product__description {
     gap: 14px;
     align-items: center;
     min-height: 58px;
-    margin-top: 18px !important;
-    padding: 14px;
+    margin-top: 14px !important;
+    padding: 12px;
     color: #526157 !important;
     font-size: 16px !important;
     line-height: 1.45 !important;
@@ -4059,8 +4143,8 @@ body:not(.modern-home) .catalog-product__emoji {
 
 body:not(.modern-home) .catalog-product strong {
     position: absolute;
-    top: 22px;
-    right: 22px;
+    top: 18px;
+    right: 18px;
     width: fit-content;
     margin-top: 0;
     color: #17231c;
@@ -4204,8 +4288,8 @@ body:not(.modern-home) .catalog-category {
 body:not(.modern-home) .catalog-category__header {
     display: grid !important;
     width: 100% !important;
-    margin: 0 0 18px !important;
-    padding: 18px 4px 12px !important;
+    margin: 0 0 14px !important;
+    padding: 12px 4px 10px !important;
     text-align: center !important;
     align-items: center !important;
     justify-items: center !important;
@@ -4577,6 +4661,224 @@ body:not(.modern-home) .catalog-category__header h2 {
 
     .modern-home #navyky .habit-list article p {
         margin-bottom: 0;
+    }
+}
+
+/* Compact intro cards on utility pages without topic artwork */
+body:not(.modern-home):has(.product-catalog) .page,
+body:not(.modern-home):has(.about-section) .page,
+body:not(.modern-home):has(.contact-page) .page {
+    min-height: auto;
+    padding: clamp(24px, 4vw, 36px) clamp(26px, 4.5vw, 42px) clamp(18px, 3vw, 28px);
+    padding-right: clamp(26px, 4.5vw, 42px);
+}
+
+/* ABOUT PAGE CONTENT LAYOUT */
+body:not(.modern-home) .about-page {
+    width: min(1120px, calc(100% - 40px));
+    margin: 0 auto 70px;
+}
+
+body:not(.modern-home) .about-page > * + * {
+    margin-top: 16px;
+}
+
+body:not(.modern-home) .about-page .page,
+body:not(.modern-home) .about-page .about-section,
+body:not(.modern-home) .about-page .about-philosophy {
+    width: 100%;
+}
+
+body:not(.modern-home) .about-page .about-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 12px;
+    min-height: auto;
+    padding: clamp(26px, 4.2vw, 40px);
+    padding-right: clamp(26px, 4.2vw, 40px);
+}
+
+body:not(.modern-home) .about-page .about-hero .section-kicker {
+    margin: 0;
+}
+
+body:not(.modern-home) .about-page .page-intro {
+    max-width: 760px;
+    margin-top: 4px;
+    font-size: clamp(17px, 1.8vw, 20px);
+}
+
+body:not(.modern-home) .about-hero__mark {
+    width: clamp(62px, 8vw, 104px);
+    height: auto;
+    opacity: 0.9;
+}
+
+body:not(.modern-home) .about-section--story {
+    display: block;
+}
+
+body:not(.modern-home) .about-section--highlight {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+body:not(.modern-home) .about-section--story .about-copy {
+    display: grid;
+    gap: 12px;
+    width: min(760px, 100%);
+    max-width: none;
+    padding: clamp(22px, 3.5vw, 34px);
+    border: 1px solid rgba(38, 94, 47, 0.14);
+    border-radius: 22px;
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(237, 247, 233, 0.86));
+    box-shadow: 0 14px 36px rgba(37, 95, 50, 0.1);
+}
+
+body:not(.modern-home) .about-section--story h2,
+body:not(.modern-home) .about-philosophy__copy h2 {
+    margin: 0;
+}
+
+body:not(.modern-home) .about-section--story .about-copy p {
+    max-width: 68ch;
+    margin-top: 0;
+    font-size: 17px;
+    line-height: 1.68;
+}
+
+body:not(.modern-home) .about-page .about-philosophy {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
+    gap: 24px;
+    align-items: center;
+    border-color: rgba(38, 94, 47, 0.14) !important;
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(237, 247, 233, 0.86)) !important;
+    box-shadow: 0 14px 36px rgba(37, 95, 50, 0.1) !important;
+    margin-bottom: 0;
+}
+
+body:not(.modern-home) .about-philosophy__copy {
+    display: grid;
+    gap: 12px;
+    min-width: 0;
+}
+
+body:not(.modern-home) .about-philosophy__copy p {
+    max-width: 68ch;
+    margin-top: 0;
+    font-size: 17px;
+    line-height: 1.68;
+}
+
+body:not(.modern-home) .about-funnel {
+    display: grid;
+    justify-items: center;
+    gap: 12px;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+}
+
+body:not(.modern-home) .about-funnel__steps {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
+}
+
+body:not(.modern-home) .about-funnel__steps span,
+body:not(.modern-home) .about-funnel strong {
+    display: grid;
+    place-items: center;
+    min-height: 54px;
+    padding: 10px;
+    color: #245f32;
+    font-size: 13px;
+    font-weight: 900;
+    line-height: 1.15;
+    text-align: center;
+    border: 1px solid rgba(45, 112, 64, 0.14);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.76);
+}
+
+body:not(.modern-home) .about-funnel__path {
+    width: 100%;
+    height: 44px;
+}
+
+body:not(.modern-home) .about-funnel__path svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+body:not(.modern-home) .about-funnel__path path {
+    fill: none;
+    stroke: rgba(45, 112, 64, 0.28);
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+
+body:not(.modern-home) .about-funnel strong {
+    min-height: 42px;
+    width: min(190px, 56%);
+    min-width: 148px;
+    color: #ffffff;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #526157, #2d7040);
+    box-shadow: 0 12px 24px rgba(82, 97, 87, 0.16);
+}
+
+body:not(.modern-home) .about-page .about-philosophy blockquote {
+    grid-column: 1 / -1;
+    margin-top: 18px;
+    padding: 18px 22px;
+    font-size: clamp(18px, 2vw, 24px);
+    font-weight: 850;
+    line-height: 1.3;
+}
+
+@media (max-width: 760px) {
+    body:not(.modern-home) .about-page .about-philosophy {
+        grid-template-columns: 1fr;
+    }
+
+    body:not(.modern-home) .about-page .about-hero {
+        grid-template-columns: 1fr;
+    }
+
+    body:not(.modern-home) .about-hero__mark {
+        display: none;
+    }
+}
+
+@media (max-width: 560px) {
+    body:not(.modern-home):has(.product-catalog) .page,
+    body:not(.modern-home):has(.about-section) .page,
+    body:not(.modern-home):has(.contact-page) .page {
+        padding: 20px 20px 16px;
+    }
+
+    body:not(.modern-home) .about-page .about-hero,
+    body:not(.modern-home) .about-page .about-section,
+    body:not(.modern-home) .about-page .about-philosophy {
+        padding: 20px;
+    }
+
+    body:not(.modern-home) .about-funnel__steps {
+        grid-template-columns: 1fr;
+    }
+
+    body:not(.modern-home) .about-funnel__path {
+        height: 34px;
     }
 }
 
