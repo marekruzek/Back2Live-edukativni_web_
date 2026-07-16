@@ -25,10 +25,7 @@
                 <h2>Napiš dotaz</h2>
                 <p>Stačí pár vět. Co řešíš, co tě zajímá nebo s čím chceš pomoct?</p>
 
-                <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-                    <input type="hidden" name="access_key" value="1a6b7f9a-b923-469f-9a7a-6e05bbebfa3c">
-                    <input type="hidden" name="subject" value="Novy dotaz z Back2Live">
-                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                <form class="contact-form" id="contactForm" novalidate>
                     <label for="name">Jméno</label>
                     <input type="text" id="name" name="name" placeholder="Tvoje jméno" required>
 
@@ -47,6 +44,9 @@
                     <textarea id="message" name="message" rows="6" placeholder="Napiš, co potřebuješ probrat." required></textarea>
 
                     <button type="submit">Odeslat dotaz</button>
+                    <p class="contact-form__notice" id="contactNotice" role="status" aria-live="polite">
+                        Tenhle formulář je jen ukázka na demo webu, zpráva se nikam neposlala.
+                    </p>
                 </form>
             </div>
 
@@ -73,6 +73,18 @@
             </aside>
         </section>
     </main>
+
+    <script>
+        const contactForm = document.querySelector("#contactForm");
+        const contactNotice = document.querySelector("#contactNotice");
+
+        if (contactForm && contactNotice) {
+            contactForm.addEventListener("submit", (event) => {
+                event.preventDefault();
+                contactNotice.classList.add("is-visible");
+            });
+        }
+    </script>
 </body>
 
 </html>
