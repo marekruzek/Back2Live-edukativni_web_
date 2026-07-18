@@ -4,6 +4,32 @@ const readingTime = document.querySelector("#readingTime");
 const performanceChart = document.querySelector(".sleep-chart--performance");
 const sleepDurationCard = document.querySelector(".sleep-duration-card");
 
+function applyCzechTypography(root = document.body) {
+    if (!root) return;
+
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+        acceptNode(node) {
+            const parent = node.parentElement;
+            if (!parent || parent.closest("script, style, textarea, pre, code")) {
+                return NodeFilter.FILTER_REJECT;
+            }
+
+            return /(^|\s)[AIKOSUVZaikosuvz]\s+\S/u.test(node.data)
+                ? NodeFilter.FILTER_ACCEPT
+                : NodeFilter.FILTER_REJECT;
+        }
+    });
+
+    const textNodes = [];
+    while (walker.nextNode()) textNodes.push(walker.currentNode);
+
+    textNodes.forEach((node) => {
+        node.data = node.data.replace(/(^|\s)([AIKOSUVZaikosuvz])\s+(?=\S)/gu, "$1$2\u00a0");
+    });
+}
+
+applyCzechTypography();
+
 function updateReadingTime() {
     if (!readingTime) return;
 
