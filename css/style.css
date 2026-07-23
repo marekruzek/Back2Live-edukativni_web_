@@ -2731,6 +2731,17 @@ a.contact-option {
     transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
+.back-to-top::before {
+    content: "↑";
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.back-to-top i {
+    display: none;
+}
+
 .back-to-top.is-visible {
     opacity: 1;
     pointer-events: auto;
@@ -2744,6 +2755,10 @@ a.contact-option {
 }
 
 @media (min-width: 1024px) {
+    .back-to-top {
+        display: none;
+    }
+
     .modern-home .article-hero {
         grid-template-columns: minmax(0, 1.12fr) minmax(410px, 0.88fr);
     }

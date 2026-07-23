@@ -51,7 +51,10 @@ function updateScrollUi() {
     }
 
     if (backToTopButton) {
-        backToTopButton.classList.toggle("is-visible", scrollTop > 420);
+        backToTopButton.classList.toggle(
+            "is-visible",
+            scrollTop > 700 && window.matchMedia("(max-width: 1023px)").matches
+        );
     }
 }
 
