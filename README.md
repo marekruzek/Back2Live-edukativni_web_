@@ -33,4 +33,4 @@ Co jsem se na projektu naučil
 
 Live Demo
 
-https://marekruzek.github.io/Back2Live-edukativni_web_/
+http://back2live.marekruzek.cz/
